@@ -49,14 +49,14 @@ jobs:
           cd ./dev
           terraform apply --auto-approve
 
-      - name: Terraform Destroy
-        id: 'tf-destroy'
+      #- name: Terraform Destroy
+      #  id: 'tf-destroy'
         #if: github.event.inputs.destroy == 'true'  # Conditional execution
-        if: |
-          github.ref == 'refs/heads/destroy' 
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.SA_KEY }}
-        run: |
-          cd ./dev
-          terraform destroy --auto-approve
+        #if: |
+        #  github.ref == 'refs/heads/destroy' 
+        #env:
+         # GOOGLE_CREDENTIALS: ${{ secrets.SA_KEY }}
+        #run: |
+         # cd ./dev
+          #terraform destroy --auto-approve
     
