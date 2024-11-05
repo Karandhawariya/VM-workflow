@@ -1,7 +1,7 @@
 resource "google_compute_instance" "default" {
   name         = "my-instance"  
   machine_type = "n2-standard-2"
-  zone         = "northamerica-northeast2-a"  
+  zone         = "us-central1-a"  
   project      = "kd-project-437712"
 
   boot_disk {
