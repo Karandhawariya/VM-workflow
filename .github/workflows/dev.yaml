@@ -21,6 +21,8 @@ jobs:
       - name: GIT Checkout
         id: 'git-checkout'
         uses: "actions/checkout@v4"
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Terraform Init
         id: 'tf-init'
@@ -60,4 +62,15 @@ jobs:
         run: |
           cd ./dev
           terraform destroy --auto-approve
+
+    
+      
+
+#- name: Terraform Init and Apply
+ # run: |
+  #  terraform init
+  #  terraform apply -auto-approve
+  #env:
+   # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     
