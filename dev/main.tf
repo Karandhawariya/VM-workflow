@@ -1,3 +1,3 @@
 module "instance" {
-  source = "github.com:Karandhawariya/quest//demo"
+  source = "git@github.com:Karandhawariya/quest.git"
 }
