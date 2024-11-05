@@ -40,6 +40,16 @@ jobs:
           terraform plan
 
 
+      - name: Terraform Apply
+        id: 'tf-apply'
+        if: |
+          github.ref == 'refs/heads/main'
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.SA_KEY }}
+        run: |
+          cd ./dev
+          terraform apply --auto-approve
+
       - name: Terraform Destroy
         id: 'tf-destroy'
         #if: github.event.inputs.destroy == 'true'  # Conditional execution
