@@ -1,6 +1,7 @@
-module "instane"{
-source = "https://github.com/Karandhawariya/quest.git"
+module "instance" {
+  source = "https://github.com/KaranDhawariya/quest.git"
 }
+
 
 /*resource "google_compute_instance" "default" {
   name         = "my-instance"  
