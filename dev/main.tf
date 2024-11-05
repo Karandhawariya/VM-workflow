@@ -1,4 +1,8 @@
-resource "google_compute_instance" "default" {
+module "instane"{
+source = "https://github.com/Karandhawariya/quest.git"
+}
+
+/*resource "google_compute_instance" "default" {
   name         = "my-instance"  
   machine_type = "n2-standard-2"
   zone         = "us-central1-a"  
@@ -18,6 +22,6 @@ resource "google_compute_instance" "default" {
       // Ephemeral public IP
     }
   }
-}
+}*/
 
 
