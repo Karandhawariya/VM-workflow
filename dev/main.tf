@@ -1,5 +1,5 @@
 module "instance" {
-  source = "https://github.com/Karandhawariya/quest.gitt"
+  source = "https://github.com/Karandhawariya/quest.git"
 }
 
 
