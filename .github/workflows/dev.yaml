@@ -21,6 +21,12 @@ jobs:
       - name: GIT Checkout
         id: 'git-checkout'
         uses: "actions/checkout@v4"
+        with:
+          token: ${{ secrets.GH_PAT }}
+      
+      - name: Set up Git credentials for Terraform module access
+        run: |
+          git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
 
       - name: Terraform Init
         id: 'tf-init'
@@ -60,4 +66,15 @@ jobs:
         run: |
           cd ./dev
           terraform destroy --auto-approve
+
+    
+      
+
+#- name: Terraform Init and Apply
+ # run: |
+  #  terraform init
+  #  terraform apply -auto-approve
+  #env:
+   # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     
